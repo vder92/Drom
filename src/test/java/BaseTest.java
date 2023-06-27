@@ -10,13 +10,12 @@ public class BaseTest {
 
     @BeforeEach
     public void setUp() {
-        //WebDriverManager.chromedriver().setup();
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--remote-allow-origins=*");
-
-        driver = new ChromeDriver(chromeOptions);
+        WebDriverManager.chromedriver().setup();
+        //System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+        //ChromeOptions chromeOptions = new ChromeOptions();
+        //chromeOptions.addArguments("--remote-allow-origins=*");
+        //driver = new ChromeDriver(chromeOptions);
+        driver = new ChromeDriver();
         driver.get("http://auto.drom.ru/");
         driver.manage().window().maximize();
     }
